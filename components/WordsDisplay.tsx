@@ -1,5 +1,4 @@
 import React, { useRef, useCallback } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import useHandleContainers from '../hooks/useHandleContainers';
 import WordContainer from './WordContainer';
 
@@ -31,12 +30,12 @@ const WordsDisplay: React.FC = () => {
           return (
             <WordContainer
               ref={lastContainerRef}
-              key={uuidv4()}
+              key={index}
               word={individualWord}
             />
           );
         }
-        return <WordContainer key={uuidv4()} word={individualWord} />;
+        return <WordContainer key={index} word={individualWord} />;
       })}
     </>
   );
